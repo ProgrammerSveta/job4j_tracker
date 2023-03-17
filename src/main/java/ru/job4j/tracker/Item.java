@@ -34,9 +34,7 @@ public class Item {
         this.name = name;
     }
 
-    LocalDateTime created = LocalDateTime.now();
-
-    public LocalDateTime getter() {
-        return created;
+    public LocalDateTime getCreated() {
+        return LocalDateTime.now();
     }
 }
