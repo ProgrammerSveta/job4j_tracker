@@ -6,8 +6,7 @@ public class ShopDrop {
         products[0] = new Product("Milk", 10);
         products[1] = new Product("Bread", 4);
         products[2] = new Product("Egg", 19);
-        for (int i = 0; i < products.length; i++) {
-            Product product = products[i];
+        for (Product product : products) {
             System.out.println(product.getName());
         }
         products[1] = products[2];
