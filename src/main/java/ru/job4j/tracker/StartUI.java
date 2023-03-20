@@ -13,10 +13,10 @@ public class StartUI {
         System.out.println("Текущие дата и время после форматирования: " + date);
 
         Item item2 = new Item(2, "Sveta");
-        System.out.println("Item: "
-                + item2.getId() + " "
-                + item2.getName() + " "
-                + item2.getCreated()
+        System.out.println("Item{id='"
+                + item2.getId() + "', name='"
+                + item2.getName() + "', created by '"
+                + item2.getCreated() + "'}"
         );
     }
 }
