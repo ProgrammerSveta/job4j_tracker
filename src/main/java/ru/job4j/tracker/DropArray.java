@@ -14,9 +14,13 @@ public class DropArray {
                 size++;
             }
         }
+
         rsl = Arrays.copyOf(rsl, size);
         for (int index = 0; index < rsl.length; index++) {
             System.out.println(rsl[index]);
         }
+
+        System.arraycopy(names, 2, names, 1, 3);
+        System.out.println(Arrays.toString(names));
     }
 }
