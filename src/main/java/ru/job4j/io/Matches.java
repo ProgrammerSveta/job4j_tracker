@@ -15,7 +15,7 @@ public class Matches {
             if (matches > 0 && matches < 4 && matches <= count) {
                 turn = !turn;
                 count = count - matches;
-                System.out.println("На столе осталось " + count + " спичек.");
+                System.out.println("На столе осталось спичек: " + count);
             } else {
                 System.out.println("Так играть нельзя!");
             }
