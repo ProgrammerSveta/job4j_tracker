@@ -19,7 +19,7 @@ public class EditAction implements UserAction {
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-            out.println("Item replaced.");
+            out.println("Заявка была изменена.");
         } else {
             out.println("Ошибка замены заявки.");
         }
