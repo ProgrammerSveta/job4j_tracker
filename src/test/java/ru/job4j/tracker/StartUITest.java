@@ -15,7 +15,7 @@ public class StartUITest {
                 new CreateAction(out),
                 new ExitAction(out)
         };
-        new StartUI().init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findAll()[0].getName()).isEqualTo("Item name");
     }
 
@@ -32,7 +32,7 @@ public class StartUITest {
                 new EditAction(out),
                 new ExitAction(out)
         };
-        new StartUI().init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo(replacedName);
     }
 
@@ -48,7 +48,7 @@ public class StartUITest {
                 new DeleteAction(out),
                 new ExitAction(out)
         };
-        new StartUI().init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
 
@@ -62,10 +62,10 @@ public class StartUITest {
         UserAction[] actions = {
                 new ExitAction(out)
         };
-        new StartUI().init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + System.lineSeparator()
-                        + "1. Exit Program" + System.lineSeparator()
+                        + "0. Exit Program" + System.lineSeparator()
         );
     }
 
@@ -82,16 +82,16 @@ public class StartUITest {
                 new EditAction(out),
                 new ExitAction(out)
         };
-        new StartUI().init(in, tracker, actions);
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
-                        + "0. Edit item" + ln
+                        + "0. Edit Item" + ln
                         + "1. Exit Program" + ln
-                        + "=== Edit item ===" + ln
-                        + "Заявка изменена успешно." + ln
+                        + "=== Edit Item ===" + ln
+                        + "Item replaced." + ln
                         + "Menu:" + ln
-                        + "0. Edit item" + ln
+                        + "0. Edit Item" + ln
                         + "1. Exit Program" + ln
         );
     }
