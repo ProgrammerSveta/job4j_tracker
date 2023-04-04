@@ -115,6 +115,7 @@ public class StartUITest {
                         + "0. Show All Items" + ln
                         + "1. Exit Program" + ln
                         + "=== Show all items ===" + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Show All Items" + ln
                         + "1. Exit Program" + ln
@@ -140,6 +141,7 @@ public class StartUITest {
                         + "0. Find by name Item" + ln
                         + "1. Exit Program" + ln
                         + "=== Find items by name ===" + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find by name Item" + ln
                         + "1. Exit Program" + ln
@@ -165,6 +167,7 @@ public class StartUITest {
                             + "0. Find by ID Item" + ln
                             + "1. Exit Program" + ln
                             + "=== Find item by id ===" + ln
+                            + one + ln
                             + "Menu:" + ln
                             + "0. Find by ID Item" + ln
                             + "1. Exit Program" + ln
