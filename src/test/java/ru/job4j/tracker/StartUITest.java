@@ -97,32 +97,6 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindAllTestOutputIsSuccessfully() {
-        Output out = new StubOutput();
-        Tracker tracker = new Tracker();
-        Item one = tracker.add(new Item("test1"));
-        Input in = new StubInput(
-                new String[]{"0", "1"}
-        );
-        UserAction[] actions = new UserAction[]{
-                new ShowAllAction(out),
-                new ExitAction(out)
-        };
-        new StartUI(out).init(in, tracker, actions);
-        String ln = System.lineSeparator();
-        assertThat(out.toString()).isEqualTo(
-                "Menu:" + ln
-                        + "0. Show All Items" + ln
-                        + "1. Exit Program" + ln
-                        + "=== Show all items ===" + ln
-                        + one + ln
-                        + "Menu:" + ln
-                        + "0. Show All Items" + ln
-                        + "1. Exit Program" + ln
-        );
-    }
-
-    @Test
     public void whenFindByNameTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -144,6 +118,32 @@ public class StartUITest {
                         + one + ln
                         + "Menu:" + ln
                         + "0. Find by name Item" + ln
+                        + "1. Exit Program" + ln
+        );
+    }
+
+    @Test
+    public void whenFindAllTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        Input in = new StubInput(
+                new String[]{"0", "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new ShowAllAction(out),
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString()).isEqualTo(
+                "Menu:" + ln
+                        + "0. Show All Items" + ln
+                        + "1. Exit Program" + ln
+                        + "=== Show all items ===" + ln
+                        + one + ln
+                        + "Menu:" + ln
+                        + "0. Show All Items" + ln
                         + "1. Exit Program" + ln
         );
     }
