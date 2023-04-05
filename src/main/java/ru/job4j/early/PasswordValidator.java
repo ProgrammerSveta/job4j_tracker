@@ -20,7 +20,6 @@ public class PasswordValidator extends Exception {
         boolean hasLowCase = false;
         boolean hasDigit = false;
         boolean hasSpecial = false;
-        boolean hasForbidden = false;
 
         for (char symbol : password.toCharArray()) {
             if (Character.isUpperCase(symbol)) {
@@ -33,16 +32,18 @@ public class PasswordValidator extends Exception {
                 hasDigit = true;
             }
             if (!Character.isLetterOrDigit(symbol)) {
-                throw new IllegalArgumentException(
-                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
-                );
+                hasSpecial = true;
             }
-            break;
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
+                break;
+            }
         }
 
         for (String badPassword : FORBIDDEN) {
             if (password.toLowerCase().contains(badPassword.toLowerCase())) {
-                hasForbidden = true;
+                throw new IllegalArgumentException(
+                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
+                );
             }
         }
 
