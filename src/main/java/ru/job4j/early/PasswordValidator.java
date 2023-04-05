@@ -33,8 +33,11 @@ public class PasswordValidator extends Exception {
                 hasDigit = true;
             }
             if (!Character.isLetterOrDigit(symbol)) {
-                hasSpecial = true;
+                throw new IllegalArgumentException(
+                        "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
+                );
             }
+            break;
         }
 
         for (String badPassword : FORBIDDEN) {
@@ -61,11 +64,6 @@ public class PasswordValidator extends Exception {
         if (!hasSpecial) {
             throw new IllegalArgumentException(
                     "Password should contain at least one special symbol"
-            );
-        }
-        if (hasForbidden) {
-            throw new IllegalArgumentException(
-                    "Password shouldn't contain substrings: qwerty, 12345, password, admin, user"
             );
         }
         return password;
