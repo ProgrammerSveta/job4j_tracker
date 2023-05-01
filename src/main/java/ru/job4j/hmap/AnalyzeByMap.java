@@ -68,11 +68,7 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             List<Subject> subjects = pupil.subjects();
             for (Subject s : subjects) {
-                int score = 0;
-                if (temp.get(s.name()) != null) {
-                    score = temp.get(s.name());
-                }
-                temp.put(s.name(), s.score() + score);
+                temp.put(s.name(), temp.getOrDefault(s.name(), 0) + s.score());
             }
         }
         for (String key : temp.keySet()) {
