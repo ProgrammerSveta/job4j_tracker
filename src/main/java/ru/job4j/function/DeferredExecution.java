@@ -12,7 +12,7 @@ public class DeferredExecution {
         Comparator<String> lengthCmp = (left, right) -> {
             System.out.println("execute comparator");
             return Integer.compare(left.length(), right.length());
-        }; // этот код не запутится, так как у name один элемент, там нечего сравнивать
+        };
         Arrays.sort(name, lengthCmp);
 
         String[] names = {
